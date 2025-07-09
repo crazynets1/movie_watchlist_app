@@ -3,42 +3,6 @@ html, body {
     padding: 0;
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    background-image: url('header.jpg');
-    background-size: cover;
-    height: 200px;
-}
-
-h1 {
-    color: white;
-    font-weight: 900;
-    margin-left: 10px;
-}
-
-.switch{
-    margin-top: 20px;
-    margin-right: 10px;
-    color: white;
-    font-size: 32px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
-    align-self: flex-start;
-}
-
-.search{
-    width: 350px;
-    margin:-20px auto 0;
-    display: flex;
-    border: 1px solid grey;
-    border-radius: 8px;
-    padding: 5px;
-    background-color: white;
-}
-
 input{
     width: 200px;
     color: black;
@@ -46,60 +10,43 @@ input{
     border: none;
 }
 
-.search-btn{
-    border: none;
-    background-color: white;
-    width: 100%;
-    border-left: 1px solid grey;
-    cursor: pointer;
-}
-
-.main {
-    width: 75%;
-    margin:10px auto;
-    color: black;
-    text-align: center;
-    display: block;
-    justify-content: space-evenly;
-}
-
-.movie-poster {
+img.movie-poster {
     width: 20%;
     height: 80%;
     margin-right: 10px;
 }
 
-.movie-details {
-    display: block;
-    justify-content: space-evenly;
-    text-align: left;
-    width: 50%;
-    margin-right: 10px;
+.disabled {
+    display: none;
+}
+
+/* All HEADINGS AND PARAGRAPHS TAGS RESIDES HERE */
+h1 {
     color: white;
+    font-weight: 900;
+    margin-left: 10px;
 }
-
-.title-rating {
-    display: flex;
-    justify-content: left;
-    margin-left: 15px;
-}
-
-.title{
+h2.title{
     margin: 8px;
 }
-
-.rating{
+p.rating{
     font-size: 15px;
     margin-top: 15px;
 }
 
-.time-type{
-    display: flex;
-    justify-content: left;
-    margin-left: 15px;
+p {
+    margin: 8px;
 }
 
-.add-btn {
+p.plot-story {
+    margin-left: 15px;
+    text-align: left;
+    margin-top: 2px;
+}
+
+
+/* ALL MY BUTTONS RESIDE BELOW THIS COMMENT */
+button.add-btn {
     border: none;
     align-self: center;
     border-radius: 50%;
@@ -113,21 +60,78 @@ input{
     background-image: linear-gradient( to bottom right, #03045e, #b5179e);
 }
 
-.disabled {
-    display: none;
+button.switch{
+    margin-top: 20px;
+    margin-right: 10px;
+    color: white;
+    font-size: 32px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    align-self: flex-start;
 }
 
-p {
-    margin: 8px;
+button.search-btn{
+    border: none;
+    background-color: white;
+    width: 100%;
+    border-left: 1px solid grey;
+    cursor: pointer;
 }
 
-.plot-story {
-    margin-left: 15px;
+
+/* ALL DIVS RESIDE BELOW THIS COMMENT */
+
+div.search{
+    width: 350px;
+    margin:-20px auto 0;
+    display: flex;
+    border: 1px solid grey;
+    border-radius: 8px;
+    padding: 5px;
+    background-color: white;
+}
+
+div.movie-details {
+    display: block;
+    justify-content: space-evenly;
     text-align: left;
-    margin-top: 2px;
+    width: 50%;
+    margin-right: 10px;
+    color: white;
 }
 
-.movie-card {
+div.main {
+    width: 75%;
+    margin:10px auto;
+    color: black;
+    text-align: center;
+    display: block;
+    justify-content: space-evenly;
+}
+
+div.title-rating {
+    display: flex;
+    justify-content: left;
+    margin-left: 15px;
+}
+
+div.time-type{
+    display: flex;
+    justify-content: left;
+    margin-left: 15px;
+}
+
+div.header {
+    display: flex;
+    justify-content: space-between;
+    background-image: url('header.jpg');
+    background-size: cover;
+    height: 200px;
+}
+
+div.movie-card {
     display: flex;
     justify-content: center;
     margin: 20px auto;
