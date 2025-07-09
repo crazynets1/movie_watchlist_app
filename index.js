@@ -11,9 +11,9 @@ searchBtn.addEventListener('click', function() {
         alert('Please, enter the name of the movie')
     } else {
         renderMovies()
+        searchArea.value = ''
     }
     addBtn.classList.remove('disabled')
-    searchArea.value = ''
 })
 
 
