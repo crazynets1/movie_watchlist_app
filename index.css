@@ -1,0 +1,114 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-image: url('header.jpg');
+    background-size: cover;
+    height: 200px;
+}
+
+h1 {
+    color: white;
+    font-weight: 900;
+    margin-left: 10px;
+}
+
+.switch{
+    margin: 20px 10px 0 0;
+    color: white;
+    font-size: 32px;
+    text-decoration: none;
+}
+
+.search{
+    width: 350px;
+    margin:-20px auto 0;
+    display: flex;
+    border: 1px solid grey;
+    border-radius: 8px;
+    padding: 5px;
+    background-color: white;
+}
+
+input{
+    width: 200px;
+    color: black;
+    text-align: center;
+    border: none;
+}
+
+.search-btn{
+    border: none;
+    background-color: white;
+    width: 100%;
+    border-left: 1px solid grey;
+    cursor: pointer;
+}
+
+.main {
+    width: 75%;
+    margin:10px auto;
+    color: black;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.movie-poster {
+    width: 20%;
+}
+
+.movie-details {
+    display: block;
+    justify-content: space-evenly;
+    text-align: left;
+    width: 50%;
+}
+
+.title-rating {
+    display: flex;
+    justify-content: left;
+    margin-left: 15px;
+}
+
+.title{
+    margin: 8px;
+}
+
+.rating{
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+.time-type{
+    display: flex;
+    justify-content: left;
+    margin-left: 15px;
+}
+
+.add-btn {
+    border: 1px solid black;
+    background-color: white;
+    align-self: center;
+    border-radius: 50%;
+    margin-bottom: 150px;
+    cursor: pointer;
+}
+
+.disabled {
+    display: none;
+}
+
+p {
+    margin: 8px;
+}
+
+.plot-story {
+    margin-left: 15px;
+    text-align: left;
+    margin-top: 2px;
+}
