@@ -18,10 +18,15 @@ h1 {
 }
 
 .switch{
-    margin: 20px 10px 0 0;
+    margin-top: 20px;
+    margin-right: 10px;
     color: white;
     font-size: 32px;
-    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    align-self: flex-start;
 }
 
 .search{
