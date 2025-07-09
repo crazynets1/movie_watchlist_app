@@ -25,17 +25,20 @@ function renderMovies () {
     .then(data => {
         movie = data
         movieHtml = `
-            <img class="movie-poster" src="${movie.Poster}">
-            <div class="movie-details">
-                <div class="title-rating">
-                    <h2 class="title">${movie.Title}</h2>
-                    <p class="rating">${movie.imdbRating}</p>
+            <div class="movie-card">
+                <img class="movie-poster" src="${movie.Poster}">
+                <div class="movie-details">
+                    <div class="title-rating">
+                        <h2 class="title">${movie.Title}</h2>
+                        <p class="rating">${movie.imdbRating}</p>
+                    </div>
+                    <div class="time-type">
+                        <p>${movie.Runtime}</p>
+                        <p>${movie.Type}</p>
+                    </div>
+                    <p class="plot-story">${movie.Plot}</p>
                 </div>
-                <div class="time-type">
-                    <p>${movie.Runtime}</p>
-                    <p>${movie.Type}</p>
-                </div>
-                <p class="plot-story">${movie.Plot}</p>
+                <button class="add-btn" id="add-btn">+</button>
             </div>
         `
         moviesSection.insertAdjacentHTML("afterbegin", movieHtml)
