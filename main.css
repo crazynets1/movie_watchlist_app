@@ -25,10 +25,14 @@ h1 {
     color: white;
     font-weight: 900;
     margin-left: 10px;
+    font-size: 45px;
+    text-shadow: 3px 3px #d90429;
 }
+
 h2.title{
     margin: 8px;
 }
+
 p.rating{
     font-size: 15px;
     margin-top: 15px;
