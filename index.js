@@ -13,36 +13,37 @@ searchBtn.addEventListener('click', function() {
         renderMovies()
         searchArea.value = ''
     }
-    addBtn.classList.remove('disabled')
 })
 
 
-function renderMovies () {
+async function renderMovies () {
     let movieHtml = ''
     let searchedMovie = searchArea.value
-    fetch(`https://www.omdbapi.com/?apikey=40947cf7&t=${searchedMovie}`, {method:'GET'})
-    .then(res => res.json())
-    .then(data => {
-        movie = data
-        movieHtml = `
-            <div class="movie-card">
-                <img class="movie-poster" src="${movie.Poster}">
-                <div class="movie-details">
-                    <div class="title-rating">
-                        <h2 class="title">${movie.Title}</h2>
-                        <p class="rating">${movie.imdbRating}</p>
+    try {
+            const res = await fetch(`https://www.omdbapi.com/?apikey=40947cf7&t=${searchedMovie}`, {method:'GET'})
+            const data = await res.json()
+                movie = data
+                movieHtml = `
+                    <div class="movie-card">
+                        <img class="movie-poster" src="${movie.Poster}">
+                        <div class="movie-details">
+                            <div class="title-rating">
+                                <h2 class="title">${movie.Title}</h2>
+                                <p class="rating">${movie.imdbRating}</p>
+                            </div>
+                            <div class="time-type">
+                                <p>${movie.Runtime}</p>
+                                <p>${movie.Type}</p>
+                            </div>
+                            <p class="plot-story">${movie.Plot}</p>
+                        </div>
+                        <button class="add-btn" id="add-btn">+</button>
                     </div>
-                    <div class="time-type">
-                        <p>${movie.Runtime}</p>
-                        <p>${movie.Type}</p>
-                    </div>
-                    <p class="plot-story">${movie.Plot}</p>
-                </div>
-                <button class="add-btn" id="add-btn">+</button>
-            </div>
-        `
-        moviesSection.insertAdjacentHTML("afterbegin", movieHtml)
-        })
+                `
+                moviesSection.insertAdjacentHTML("afterbegin", movieHtml)
+        } catch (err) {
+            alert(err)
+        }
 }
 
 addBtn.addEventListener('click', function() {
