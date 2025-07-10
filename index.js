@@ -22,6 +22,9 @@ async function renderMovies () {
     try {
             const res = await fetch(`https://www.omdbapi.com/?apikey=40947cf7&t=${searchedMovie}`, {method:'GET'})
             const data = await res.json()
+            if (data.Response === 'False') {
+                throw new Error('Movie not found. Please try another title.')
+            }
                 movie = data
                 movieHtml = `
                     <div class="movie-card">
@@ -47,7 +50,8 @@ async function renderMovies () {
 }
 
 addBtn.addEventListener('click', function() {
-    addMovie()
+    // addMovie()
+    console.log('Add button clicked')
 })
 
 function addMovie () {
