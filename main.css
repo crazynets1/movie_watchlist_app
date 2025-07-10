@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -14,10 +18,6 @@ img.movie-poster {
     width: 20%;
     height: 80%;
     margin-right: 10px;
-}
-
-.disabled {
-    display: none;
 }
 
 /* All HEADINGS AND PARAGRAPHS TAGS RESIDES HERE */
@@ -85,7 +85,7 @@ button.search-btn{
 }
 
 
-/* ALL DIVS RESIDE BELOW THIS COMMENT */
+/* ALL DIVS RESIDEs BELOW HERE*/
 
 div.search{
     width: 350px;
@@ -113,6 +113,7 @@ div.main {
     text-align: center;
     display: block;
     justify-content: space-evenly;
+    background-color: black;
 }
 
 div.title-rating {
@@ -144,4 +145,11 @@ div.movie-card {
     border-radius: 8px;
     background-image: linear-gradient( to bottom right, #03045e, #b5179e);
     width: 80%;
+}
+
+div.saved-movies{
+    width: 50%;
+    background-color: #d90429;
+    height: 150px;
+    margin: auto;
 }
