@@ -1,7 +1,6 @@
 const moviesSection = document.getElementById('movies')
 const searchArea = document.getElementById('search-area')
 const searchBtn = document.getElementById('search-btn')
-const addBtn = document.getElementById('add-btn')
 const addedMovieSect = document.getElementById('added-movie')
 let movie = ''
 let moviesArr = []
@@ -28,7 +27,7 @@ async function renderMovies () {
                 movie = data
                 movieHtml = `
                     <div class="movie-card">
-                        <img class="movie-poster" src="${movie.Poster}">
+                        <img class="movie-poster" src="${movie.Poster}" alt="${movie.Title} image">
                         <div class="movie-details">
                             <div class="title-rating">
                                 <h2 class="title">${movie.Title}</h2>
@@ -40,7 +39,7 @@ async function renderMovies () {
                             </div>
                             <p class="plot-story">${movie.Plot}</p>
                         </div>
-                        <button class="add-btn" id="add-btn">+</button>
+                        <button class="add-btn" data-imdb-id="${movie.imdbID}" data-movie='${JSON.stringify(movie)}'>+</button>
                     </div>
                 `
                 moviesSection.insertAdjacentHTML("afterbegin", movieHtml)
@@ -49,19 +48,20 @@ async function renderMovies () {
         }
 }
 
-addBtn.addEventListener('click', function() {
-    // addMovie()
-    console.log('Add button clicked')
+document.addEventListener('click', (e) => {
+    if (e.target.dataset.imdbId) {
+        const clickedMovie = JSON.parse(e.target.dataset.movie)
+        if (moviesArr.some(existingMovie => existingMovie.imdbID == clickedMovie.imdbID)) {
+            alert(`${clickedMovie.Title} already added in your watchlist, try to add another movie`)
+        }else {
+            moviesArr.push(clickedMovie)
+            console.log(moviesArr)
+            handleFavoriteMovies()
+        }
+    }
 })
 
-function addMovie () {
-       let addedMovie = {
-        poster: movie.Poster,
-        title:  movie.Title,
-        mins:   movie.Runtime,
-        type:   movie.Type
-    }
-    moviesArr.unshifts(addedMovie)
-    console.log(moviesArr)
+
+function handleFavoriteMovies() {
     console.log(moviesArr.length)
 }
