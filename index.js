@@ -2,6 +2,7 @@ const moviesSection = document.getElementById('movies')
 const searchArea = document.getElementById('search-area')
 const searchBtn = document.getElementById('search-btn')
 const addedMovieSect = document.getElementById('added-movie')
+const favMovies = document.getElementById("fav-movies")
 let movie = ''
 let moviesArr = []
 
@@ -55,13 +56,34 @@ document.addEventListener('click', (e) => {
             alert(`${clickedMovie.Title} already added in your watchlist, try to add another movie`)
         }else {
             moviesArr.push(clickedMovie)
-            console.log(moviesArr)
-            handleFavoriteMovies()
         }
+    }
+
+    if(e.target.dataset.switch) {
+        window.location.href= "mylist.html"
+        favMovies.classList.remove("disabled")
     }
 })
 
 
 function handleFavoriteMovies() {
-    console.log(moviesArr.length)
+    moviesArr.map(movie => {
+       movieHtml = `
+                    <div class="movie-card">
+                        <img class="movie-poster" src="${movie.Poster}" alt="${movie.Title} image">
+                        <div class="movie-details">
+                            <div class="title-rating">
+                                <h2 class="title">${movie.Title}</h2>
+                                <p class="rating">${movie.imdbRating}</p>
+                            </div>
+                            <div class="time-type">
+                                <p>${movie.Runtime}</p>
+                                <p>${movie.Type}</p>
+                            </div>
+                        </div>
+                    </div>
+                    `
+    favMovies.innerHTML += movieHtml
+   })
+   console.log(moviesArr)
 }

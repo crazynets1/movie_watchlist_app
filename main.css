@@ -56,15 +56,15 @@ button.add-btn {
     border-radius: 50%;
     margin-bottom: 170px;
     width: 30px;
-    height: 30px;
     font-size: 24px;
     cursor: pointer;
     color: white;
     opacity: 0.8;
+    display: inline-block;
     background-image: linear-gradient( to bottom right, #03045e, #b5179e);
 }
 
-a.switch{
+button.switch, a.switch{
     margin-top: 20px;
     margin-right: 10px;
     color: white;
@@ -107,13 +107,17 @@ div.movie-details {
     color: white;
 }
 
-div.main {
+div.main, div.fav-movies {
     width: 75%;
     margin:10px auto;
     color: black;
     text-align: center;
     display: block;
     justify-content: space-evenly;
+}
+
+div.disabled {
+    display: none;
 }
 
 div.title-rating {
@@ -153,3 +157,4 @@ div.saved-movies{
     height: 150px;
     margin: auto;
 }
+

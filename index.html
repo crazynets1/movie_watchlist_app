@@ -6,8 +6,8 @@
     </head>
     <body>
         <div class="header">
-        <h1>MovieFlix</h1>
-        <a href="mylist.html" id="switch" class="switch" type="button">Watchlist</a>
+            <h1>MovieFlix</h1>
+            <button id="switch" class="switch" type="button" data-switch="switch">Watchlist</button>
         </div>
         <div class="search">
             <span class="material-symbols-outlined">search</span>
@@ -15,6 +15,7 @@
             <button class="search-btn" id="search-btn" type="button">Search</button>
         </div>
         <div id="movies" class="main"></div>
+        <div id="fav-movies" class="fav-movies"></div>
         <script src="index.js"></script>
     </body>
 </html>
