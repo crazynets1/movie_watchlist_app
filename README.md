@@ -1,19 +1,53 @@
-# Getting Started
-Install the dependencies and run the project
+# Movie Watchlist App
+
+A simple web application to search for movies and manage your personal watchlist, built with vanilla JavaScript, HTML, CSS, and powered by the OMDb API.
+
+## Features
+- **Search Movies:** Enter a movie title to fetch details from the OMDb API.
+- **Add to Watchlist:** Add movies to your personal watchlist with a single click.
+- **Duplicate Prevention:** Prevents adding the same movie more than once.
+- **Responsive UI:** Clean and modern interface styled with CSS.
+
+## How It Works
+1. **Search:** Type a movie name in the search bar and click the `Search` button.
+2. **Display:** Movie details (poster, title, rating, runtime, type, plot) are displayed.
+3. **Add:** Click the `+` button to add the movie to your watchlist. If the movie is already in your watchlist, you'll get an alert.
+
+## Project Structure
 ```
-npm install
-npm start
+movie_watchlist_app/
+├── header.jpg
+├── index.html         # Main HTML file
+├── index.js           # Main JavaScript logic
+├── main.css           # Stylesheet
+├── package.json       # Project metadata and scripts
+├── vite.config.js     # Vite configuration
+└── README.md          # Project documentation
 ```
 
-Head over to https://vitejs.dev/ to learn more about configuring vite
-## About Scrimba
+## Setup & Usage
+1. **Install dependencies:**
+   ```sh
+   npm install
+   ```
+2. **Start the development server:**
+   ```sh
+   npm start
+   ```
+3. **Open your browser:**
+   Visit `http://localhost:5173` (or the port shown in your terminal).
 
-At Scrimba our goal is to create the best possible coding school at the cost of a gym membership! 💜
-If we succeed with this, it will give anyone who wants to become a software developer a realistic shot at succeeding, regardless of where they live and the size of their wallets 🎉
-The Frontend Developer Career Path aims to teach you everything you need to become a Junior Developer, or you could take a deep-dive with one of our advanced courses 🚀
+## Technologies Used
+- [Vite](https://vitejs.dev/) for fast development
+- [OMDb API](https://www.omdbapi.com/) for movie data
+- `Vanilla JavaScript, HTML, and CSS`
 
-- [Our courses](https://scrimba.com/allcourses)
-- [The Frontend Career Path](https://scrimba.com/learn/frontend)
-- [Become a Scrimba Pro member](https://scrimba.com/pricing)
+## Customization
+- You can update the UI in `main.css`.
+- To change the OMDb API key, edit the fetch URL in `index.js`.
 
+## License
+This project is for educational purposes and part of the Scrimba Frontend Developer Career Path.
+
+---
 Happy Coding!
